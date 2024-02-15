@@ -1,0 +1,39 @@
+{
+    "rutas_de_entrenamiento": [
+        {
+            "nombre": "Fundamentos de programacion",
+            "cursos": [
+                "Python"
+            ]
+        },
+        {
+            "nombre": "Programacion Web",
+            "cursos": [
+                "HTML"
+            ]
+        },
+        {
+            "nombre": "Programacion formal",
+            "cursos": [
+                "Java"
+            ]
+        },
+        {
+            "nombre": "Bases de datos",
+            "cursos": [
+                "Mysql",
+                "MongoDb",
+                "Postgresql"
+            ],
+            "sgdb_principal": "Mysql",
+            "sgdb_alternativo": "MongoDb"
+        },
+        {
+            "nombre": "Backend",
+            "cursos": [
+                "NetCore",
+                "NodeJS"
+            ]
+        }
+    ]
+}

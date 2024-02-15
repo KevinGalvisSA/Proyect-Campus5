@@ -1,0 +1,15 @@
+{
+    "documento": "documento", 
+
+    "nombre": "nombre", 
+
+    "edad": "edad", 
+
+    "telefono movil": "TelMov", 
+
+    "telefono fijo": "TelFijo", 
+
+    "Estado": "estado",
+
+    "Riesgo": false
+}
