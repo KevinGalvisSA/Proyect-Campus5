@@ -11,7 +11,7 @@ def registrarCamper():
     edad = input("Ingrese la edad del participante: ")
     TelMov = input("Ingrese el número móvil del camper: ")
     TelFijo = input("Ingrese el número fijo del camper: ")
-    estado = print("En proceso de ingreso")
+    estado = "Inscrito"
     
     Campers[documento] = {'nombre': nombre, 'edad': edad, 'documento': documento, 'telefono movil': TelMov, 'telefono fijo': TelFijo, 'Estado': estado, 'Riesgo': False}
     
