@@ -1,6 +1,7 @@
 import Main
 import Trainers
 import Campers
+import Coordinacion
 
 def MenuOpciones(Opciones):
     #Calcular longitud maxima de las opciones
@@ -35,7 +36,7 @@ OpcionEscogida = ["                  *Bienvenido al Menu Principal*",
 def TerminarMenuPrincipal():
     print("Has decidido salir del menu 'Principal'")
     print("")
-    print("Volviendo al menu principal...")
+    print("Saliendo...")
     #Añadir funcion time
     exit()
 
@@ -65,7 +66,7 @@ def MenuPrincipal2():
                 
             elif opc  == 3:
                 
-                "Coordinador.MenuCoordinador"
+                Coordinacion.MenuCoordinacion()
                 
             elif opc  == 4:
                 

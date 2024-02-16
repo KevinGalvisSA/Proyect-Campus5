@@ -35,12 +35,23 @@ def RegistroTrainer():
         
     with open("Trainers.json", "r") as archivo:
         datosTrainer = json.load(archivo)
-        print("Aqui te presentamos los registros de los campers")
+        print("Aqui te presentamos los registros de los Trainers:")
         print(datosTrainer)
 
+def EliminarTrainer():
+    global Trainers
+    doc = input("Ingrese el documento del camper a eliminar: ")
+    if doc == documento:
+        print("Entendido, procediendo a eliminar el registro del camper...")
+        if documento in Trainers:
+            del Trainers[documento]
+        #Añadir funcion time
+        print("Trainer eliminado con exito")
+    else:
+        print("No has ingresado el documento correcto")
 
-def TerminarMenuCamper():
-    print("Has decidido salir del menu 'Gestion de Campers'.")
+def TerminarMenuTrainer():
+    print("Has decidido salir del menu 'Gestion de Trainers'.")
     print("")
     print("Volviendo al menu principal...")
     #Añadir funcion time
@@ -93,8 +104,8 @@ def MenuTrainer():
                 RegistroTrainer()
                 
             elif opc == 2:
-                datos = Rutas.cargar_datos()
-                Rutas.mostrar_disponibilidad(datos)
+                """datos = Rutas.cargar_datos()
+                Rutas.mostrar_disponibilidad(datos)"""
                 
             elif opc == 3:
                 
@@ -102,7 +113,7 @@ def MenuTrainer():
                 
             elif opc == 4:
                 
-                TerminarMenuCamper()
+                TerminarMenuTrainer()
                 
             else:
                 print("No has ingresado uno de los identirficadores disponibles")
@@ -110,4 +121,3 @@ def MenuTrainer():
             print("Ha ocurrido un error al ingresar la opcion deseada -->", e)
             print("")
             print("Asegurate de ingresar la opcion correcta tomando en cuenta el identificador ('1', '2', '3' o '4').")
-

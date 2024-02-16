@@ -1,6 +1,5 @@
-import json
-import random
-
+import ExamenIngreso
+import Eliminar_Campers_Trainers
 
 def MuestraMenu(Opciones):
     #Calcular longitud maxima de las opciones
@@ -66,7 +65,53 @@ def contraseña():
                 #Añadir funcion time
                 break
 
-contraseña()
-
+def MenuCoordinacion():
+    while True:
+        try:
+            MuestraMenu(OpcionEscogida)
+            
+            print("")
+            
+            Opc = int(input("Ingresa el identificador de la opcion deseada: "))
+            
+            print("")
+            
+            if Opc == 1:
+                
+                "Modificar_Estado_RiesgoCamper()"
+                
+            elif Opc == 2:
+                
+                ExamenIngreso.NotasExamenIngreso()
+                
+            elif Opc == 3:
+                
+                "AñadirNotaFiltros()"
+                
+            elif Opc == 4:
+                
+                Eliminar_Campers_Trainers.Eliminacion_Campers_Trainers()
+                
+            elif Opc == 5:
+                
+                "CrearRutasNuevas()"
+                
+            elif Opc == 6:
+                
+                "AñadirHorarios()"
+                
+            elif Opc == 7:
+                
+                "AsignarCampers_Trainers()"
+                
+            elif Opc == 8:
+                
+                "TerminarMenuCoordinacion()"
+            else:
+                print("No has ingresado uno de los identirficadores disponibles")
+        except ValueError as e:
+            print("Ha ocurrido un error al ingresar la opcion deseada -->", e)
+            print("")
+            print("Asegurate de ingresar la opcion correcta tomando en cuenta el identificador ('1', '2', '3' o '4').")
 
 

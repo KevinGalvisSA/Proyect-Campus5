@@ -1,6 +1,5 @@
 import json
 
-
 def NotasExamenIngreso():
     # Cargar el archivo JSON
     with open('ExamenIngreso.json', 'r') as archivo:
@@ -33,9 +32,6 @@ def NotasExamenIngreso():
     # Guardar los datos actualizados en el archivo JSON
     with open('ExamenIngreso.json', 'w') as archivo:
         json.dump(data, archivo, indent=4)
-
-
-NotasExamenIngreso()
 
 
 
