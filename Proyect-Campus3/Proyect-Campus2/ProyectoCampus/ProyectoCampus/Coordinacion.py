@@ -113,5 +113,3 @@ def MenuCoordinacion():
             print("Ha ocurrido un error al ingresar la opcion deseada -->", e)
             print("")
             print("Asegurate de ingresar la opcion correcta tomando en cuenta el identificador ('1', '2', '3' o '4').")
-
-

@@ -1,4 +1,4 @@
-{
+[{
     "rutas_de_entrenamiento": [
         {
             "nombre": "Fundamentos de programacion",
@@ -36,4 +36,4 @@
             ]
         }
     ]
-}
+}]
