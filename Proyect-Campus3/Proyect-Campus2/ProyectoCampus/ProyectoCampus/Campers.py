@@ -1,5 +1,5 @@
 import json
-import Main
+import RegresarMain
 
 Campers = {}
 
@@ -13,16 +13,10 @@ def registrarCamper():
     TelFijo = input("Ingrese el número fijo del camper: ")
     estado = "Inscrito"
     
-    Campers[documento] = {'nombre': nombre, 'edad': edad, 'documento': documento, 'telefono movil': TelMov, 'telefono fijo': TelFijo, 'Estado': estado, 'Riesgo': False}
+    Campers[documento] = {'nombre': nombre, 'edad': edad, 'telefono movil': TelMov, 'telefono fijo': TelFijo, 'estado': estado, 'riesgo': False}
     
     with open("Campers.json", "w") as MuestraCampers:
-        
         json.dump(Campers, MuestraCampers, indent=4)
-        
-    with open("Campers.json", "r") as archivo:
-        datosCampers = json.load(archivo)
-        print("Aqui te presentamos los registros de los campers")
-        print(datosCampers)
 
 
 def MuestraMenu(Opciones):
@@ -47,39 +41,25 @@ OpcionEscogida = ["           *Bienvenido al menu de Campers*",
     "",
     "1. Registrar Camper",
     "",
-    "2. Eliminar Camper",
+    "2. Mostrar Campers registrados",
     "",
-    "3. Mostrar Campers registrados",
-    "",
-    "4. Salir"
+    "3. Salir"
     
 ]
 
-def EliminarCamper():
-    global Campers
-    doc = input("Ingrese el documento del camper a eliminar: ")
-    if doc == documento:
-        print("Entendido, procediendo a eliminar el registro del camper...")
-        if documento in Campers:
-            del Campers[documento]
-        #Añadir funcion time
-        print("Camper eliminado con exito")
-    else:
-        print("No has ingresado el documento correcto")
-
 def MostrarCampers():
     global Campers
-    for Camper in Campers:
-        print("A continuacion, se le presentan los datos de los campers registrados.")
-        print("")
-        print(Campers)
+    with open("Campers.json", "r") as archivo:
+            datosCampers = json.load(archivo)
+            print("Aqui te presentamos los registros de los campers")
+            print(datosCampers)
 
 def TerminarMenuCamper():
     print("Has decidido salir del menu 'Gestion de Campers'.")
     print("")
     print("Volviendo al menu principal...")
     #Añadir funcion time
-    Main.MenuPrincipal()
+    RegresarMain.RegresarAlMain()
 
 
 def MenuCamper():
@@ -99,13 +79,9 @@ def MenuCamper():
                 
             elif Option == 2:
                 
-                EliminarCamper()
-                
-            elif Option == 3:
-                
                 MostrarCampers()
                 
-            elif Option == 4:
+            elif Option == 3:
                 
                 TerminarMenuCamper()
                 

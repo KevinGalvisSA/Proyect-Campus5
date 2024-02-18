@@ -1,5 +1,7 @@
 import ExamenIngreso
 import Eliminar_Campers_Trainers
+import RegresarMain
+import CrearRutas
 
 def MuestraMenu(Opciones):
     #Calcular longitud maxima de las opciones
@@ -21,23 +23,30 @@ OpcionEscogida = ["           *Bienvenido al menu de Coordinacion*",
     "═════════════════════════════════════════════════════════",
     "A continuacion, se le presentan las siguientes opciones:",
     "",
-    "1. Aprovar Campers y Trainers",
+    "1. Actualizar nota de ingreso del camper",
     "",
-    "2. Actualizar nota de ingreso del camper",
+    "2. Actualizar notas de los filtros",
     "",
-    "3. Actualizar notas de los filtros.",
+    "3. Eliminar/Denegar Campers y Trainers",
     "",
-    "4. Eliminar/Denegar Campers y Trainers",
+    "4. Crear nuevas rutas",
     "",
-    "5. Crear nuevas rutas",
+    "5. Añadir horarios de clase",
     "",
-    "6. Añadir horarios de clase",
+    "6. Asignar Campers y Trainers",
     "",
-    "7. Asignar Campers y Trainers"
-    "",
-    "8. Salir"
+    "7. Salir"
     
 ]
+
+def TerminarMenuCoordinacion():
+    print("Has decidido salir del menu 'Gestion de Campers'.")
+    print("")
+    print("Volviendo al menu principal...")
+    #Añadir funcion time
+    RegresarMain.RegresarAlMain()
+
+
 
 def contraseña():
     
@@ -63,11 +72,13 @@ def contraseña():
                 print("")
                 print("Deteniendo todo el sistema CAMPUSLAND...")
                 #Añadir funcion time
-                break
+                exit()
 
 def MenuCoordinacion():
     while True:
         try:
+            contraseña()
+            
             MuestraMenu(OpcionEscogida)
             
             print("")
@@ -78,15 +89,15 @@ def MenuCoordinacion():
             
             if Opc == 1:
                 
-                "Modificar_Estado_RiesgoCamper()"
+                ExamenIngreso.NotasExamenIngreso()
                 
             elif Opc == 2:
                 
-                ExamenIngreso.NotasExamenIngreso()
+                "AñadirNotaFiltros()"
                 
             elif Opc == 3:
                 
-                "AñadirNotaFiltros()"
+                "Modificar_Estado_RiesgoCamper()"
                 
             elif Opc == 4:
                 
@@ -94,7 +105,7 @@ def MenuCoordinacion():
                 
             elif Opc == 5:
                 
-                "CrearRutasNuevas()"
+                CrearRutas.CrearRutasNuevas()
                 
             elif Opc == 6:
                 
@@ -106,7 +117,54 @@ def MenuCoordinacion():
                 
             elif Opc == 8:
                 
-                "TerminarMenuCoordinacion()"
+                TerminarMenuCoordinacion()
+            else:
+                print("No has ingresado uno de los identirficadores disponibles")
+        except ValueError as e:
+            print("Ha ocurrido un error al ingresar la opcion deseada -->", e)
+            print("")
+            print("Asegurate de ingresar la opcion correcta tomando en cuenta el identificador ('1', '2', '3' o '4').")
+
+def MenuCoordinacion2():
+    while True:
+        try:
+            
+            MuestraMenu(OpcionEscogida)
+            
+            print("")
+            
+            Opc = int(input("Ingresa el identificador de la opcion deseada: "))
+            
+            print("")
+            
+            if Opc == 1:
+                
+                ExamenIngreso.NotasExamenIngreso()
+                
+            elif Opc == 2:
+                
+                "AñadirNotaFiltros()"
+                
+            elif Opc == 3:
+                
+                Eliminar_Campers_Trainers.Eliminacion_Campers_Trainers()
+                
+            elif Opc == 4:
+                
+                CrearRutas.CrearRutasNuevas()
+                
+            elif Opc == 5:
+                
+                "AñadirHorarios()"
+                
+            elif Opc == 6:
+                
+                "AsignarCampers_Trainers()"
+                
+            elif Opc == 7:
+                
+                TerminarMenuCoordinacion()
+                
             else:
                 print("No has ingresado uno de los identirficadores disponibles")
         except ValueError as e:

@@ -3,6 +3,7 @@ import Trainers
 import Campers
 import Coordinacion
 
+
 def MenuOpciones(Opciones):
     #Calcular longitud maxima de las opciones
     LongitudMaxima = max(len(Opcion) for Opcion in Opciones)
@@ -30,7 +31,7 @@ OpcionEscogida = ["                  *Bienvenido al Menu Principal*",
     "",
     "3. Acceder al menu *Coordinacion*(|EstadoCamper-AsignacionTrainer|)",
     "",
-    "5. Salir"
+    "4. Salir"
 ]
 
 def TerminarMenuPrincipal():
