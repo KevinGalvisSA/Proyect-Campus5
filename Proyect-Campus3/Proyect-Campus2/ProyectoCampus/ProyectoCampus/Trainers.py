@@ -79,7 +79,16 @@ def MenuTrainer():
                 
             elif opc == 2:
                 
-                print("En Desarrollo")
+                with open('Areas.json', 'r') as archivo_areas:
+                    Areas = json.load(archivo_areas)
+                    print("Aqui te presentamos las rutas defidas disponibles")
+                    print(Areas)
+                print("")
+                print("Ademas. Te presentamos las rutas que estan en fase de creacion")
+                print("")
+                with open("RutasNuevas.json", "r") as archivo:
+                    datos = json.load(archivo)
+                    print(datos)
                 
             elif opc == 3:
                 

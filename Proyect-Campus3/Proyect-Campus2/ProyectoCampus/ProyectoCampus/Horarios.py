@@ -8,13 +8,25 @@ def cargar_trainers():
 
 def crearHorariosTrainers(trainers):
     horariosTrainer = {}
-    for trainer_id, trainer_data in trainers.items():
-        rutas = trainer_data.get("rutas", [])
-        horariosTrainer[trainer_id] = {ruta: False for ruta in rutas}
+    for documento, trainerData in trainers.items():
+        rutas = trainerData.get("rutas", [])
+        horariosTrainer[documento] = {}
+        horarioElegido = input(f"Ingrese el horario para el Trainer {documento} (1 para 6:00 - 14:00, 2 para 14:00 - 22:00): ")
+        if horarioElegido == "1":
+            horariosTrainer[documento]["6:00 - 14:00"] = {ruta: False for ruta in rutas}
+            horariosTrainer[documento]["14:00 - 22:00"] = {}
+        elif horarioElegido == "2":
+            horariosTrainer[documento]["6:00 - 14:00"] = {}
+            horariosTrainer[documento]["14:00 - 22:00"] = {ruta: False for ruta in rutas}
+        else:
+            print("Opción no válida. Se asignará el horario 1 por defecto.")
+            horariosTrainer[documento]["6:00 - 14:00"] = {ruta: False for ruta in rutas}
+            horariosTrainer[documento]["14:00 - 22:00"] = {}
     return horariosTrainer
 
-def puede_dirigir_trainer(trainer_id, ruta, horariosTrainer):
-    return horariosTrainer.get(trainer_id, {}).get(ruta, False)
+
+def puede_dirigir_trainer(documento, ruta, horariosTrainer):
+    return horariosTrainer.get(documento, {}).get(ruta, False)
 
 def añadirHorarios():
 # Cargar los datos de los Trainers desde el archivo JSON
@@ -24,25 +36,25 @@ def añadirHorarios():
     horariosTrainer = crearHorariosTrainers(trainers)
 
     # Solicitar al usuario que ingrese el ID del Trainer y la ruta que desea verificar
-    trainer_id = input("Ingrese el ID del Trainer: ")
+    documento = input("Ingrese el documento del Trainer: ")
     ruta = input("Ingrese la ruta que desea verificar: ")
 
     # Verificar si el Trainer puede dirigir la ruta especificada
-    if trainer_id not in trainers:
+    if documento not in trainers:
         print("El documento ingresado no está registrado.")
     else:
-        if puede_dirigir_trainer(trainer_id, ruta, horariosTrainer):
-            print(f"El Trainer {trainer_id} puede dirigir la ruta {ruta}")
+        if puede_dirigir_trainer(documento, ruta, horariosTrainer):
+            print(f"El Trainer {documento} puede dirigir la ruta {ruta}")
         else:
-            print(f"El Trainer {trainer_id} no puede dirigir la ruta {ruta}")
+            print(f"El Trainer {documento} no puede dirigir la ruta {ruta}")
 
         # Solicitar al usuario si desea permitir que el Trainer dirija la ruta especificada
         decision = input("¿Desea permitir que el Trainer dirija esta ruta? (sí/no): ").lower()
         if decision == "s" or decision == "si":
-            horariosTrainer[trainer_id][ruta] = True
-            print(f"Se ha permitido que el Trainer {trainer_id} dirija la ruta {ruta}")
+            horariosTrainer[documento][ruta] = True
+            print(f"Se ha permitido que el Trainer {documento} dirija la ruta {ruta}")
         elif decision == "n" or decision == "no":
-            print(f"No se permite que el Trainer {trainer_id} dirija la ruta {ruta}")
+            print(f"No se permite que el Trainer {documento} dirija la ruta {ruta}")
         else:
             print("Respuesta inválida. Por favor, ingrese 'sí', 's' o 'no', 'n'.")
 

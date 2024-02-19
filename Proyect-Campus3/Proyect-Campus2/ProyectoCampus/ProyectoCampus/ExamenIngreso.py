@@ -4,12 +4,12 @@ import RegresarCoordinacion
 def NotasExamenIngreso():
     with open("Campers.json", "r") as Archivo:
         dato = json.load(Archivo)
-        # Iterar sobre la lista de tuplas
     # Cargar el archivo JSON
     with open('CampersAprovados.json', 'r') as archivo:
         datos = json.load(archivo)
     with open('CampersReprovados.json', 'r') as archivo:
         datas = json.load(archivo)
+    #Lista de tuplas
     Lista = [(clave, valor) for clave, valor in dato.items()]
     for clave, diccionario_interno in Lista:
         documento = input("Ingrese el documento del camper al cual se le asignara la nota: ")
