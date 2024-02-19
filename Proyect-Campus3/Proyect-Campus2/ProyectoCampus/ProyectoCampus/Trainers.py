@@ -71,7 +71,7 @@ def MenuTrainer():
             print("")
             
             opc = int(input("Ingresa el identificador de la opcion deseada: "))
-            
+            time.sleep(3)
             print("")
             
             if opc == 1:

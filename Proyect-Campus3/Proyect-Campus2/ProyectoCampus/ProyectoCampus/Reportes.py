@@ -1,6 +1,6 @@
 import json
 import Aprovados_Reprovados
-
+import time
 
 def mostrarMenu():
     print("╔═════════════════════════════════════════╗")
@@ -19,6 +19,7 @@ def menuReportes():
     while True:
         mostrarMenu()
         opcion = input("Seleccione una opción: ")
+        time.sleep(3)
         if opcion == "1":
             
             with open("Campers.json", "r") as archivo:

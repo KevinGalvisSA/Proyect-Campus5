@@ -135,7 +135,7 @@ def MenuCoordinacion2():
             print("")
             
             Opc = int(input("Ingresa el identificador de la opcion deseada: "))
-            
+            time.sleep(3)
             print("")
             
             if Opc == 1:

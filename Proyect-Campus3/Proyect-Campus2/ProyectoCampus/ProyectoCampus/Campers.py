@@ -71,7 +71,7 @@ def MenuCamper():
             print("")
             
             Option = int(input("Ingresa el identificador de la opcion deseada: "))
-            
+            time.sleep(3)
             print("")
             
             if Option == 1:
