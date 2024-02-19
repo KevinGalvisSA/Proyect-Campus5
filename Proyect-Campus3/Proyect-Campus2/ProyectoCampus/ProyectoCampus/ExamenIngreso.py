@@ -6,8 +6,10 @@ def NotasExamenIngreso():
         dato = json.load(Archivo)
         # Iterar sobre la lista de tuplas
     # Cargar el archivo JSON
-    with open('ExamenIngreso.json', 'r') as archivo:
-        data = json.load(archivo)
+    with open('CampersAprovados.json', 'r') as archivo:
+        datos = json.load(archivo)
+    with open('CampersReprovados.json', 'r') as archivo:
+        datas = json.load(archivo)
     Lista = [(clave, valor) for clave, valor in dato.items()]
     for clave, diccionario_interno in Lista:
         documento = input("Ingrese el documento del camper al cual se le asignara la nota: ")
@@ -32,16 +34,17 @@ def NotasExamenIngreso():
                         NotaIngreso = NotaPromedio
                         Resultados = {
                             "Nombre": nombre,
-                            "Nota": NotaIngreso
+                            "Nota": NotaIngreso,
+                            "estado": NuevoEstado
                         }
                         # Agregar el resultado la lista de resultados en el archivo JSON
-                        data["Resultados"].append(Resultados)
+                        datos["Resultados"].append(Resultados)
                         # Guardar los datos actualizados en el archivo JSON
-                        with open('ExamenIngreso.json', 'w') as archivo:
-                            json.dump(data, archivo, indent=4)
-                        with open('ExamenIngreso.json', 'r') as archivo:
-                            LeerNotas = json.load(archivo)
-                            print(LeerNotas)
+                        with open('CampersReprovados.json', 'w') as archivo2:
+                            json.dump(datos, archivo2, indent=4)
+                        with open('CampersReprovados.json', 'r') as archivo2:
+                            LeerReprovados = json.load(archivo2)
+                            print(LeerReprovados)
                             break
                     else:
                         print("El estado del camper no es el correcto")
@@ -55,19 +58,19 @@ def NotasExamenIngreso():
                         NotaIngreso = NotaPromedio
                         Resultados = {
                             "Nombre": nombre,
-                            "Nota": NotaIngreso
+                            "Nota": NotaIngreso,
+                            "estado": NuevoEstado
                         }
                         # Agregar el resultado la lista de resultados en el archivo JSON
-                        data["Resultados"].append(Resultados)
+                        datas["Resultados"].append(Resultados)
+                        with open('CampersAprovados.json', 'w') as archivo1:
+                            json.dump(datas, archivo1, indent=4)
+                        with open('CampersAprovados.json', 'r') as archivo1:
+                            LeerAprovados = json.load(archivo1)
+                            print(LeerAprovados)
+                            break
                     else:
                         print("El estado del camper no es el correcto")
-                    # Guardar los datos actualizados en el archivo JSON
-                    with open('ExamenIngreso.json', 'w') as archivo:
-                        json.dump(data, archivo, indent=4)
-                    with open('ExamenIngreso.json', 'r') as archivo:
-                        LeerNotas = json.load(archivo)
-                        print(LeerNotas)
-                        break
             else:
                 print(f"El camper que has igresado {nombre}. NO se encuentra registrado")
         else:

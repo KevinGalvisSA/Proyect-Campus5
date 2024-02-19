@@ -15,13 +15,7 @@
         },
         "apolo": {
             "capacidad_maxima": 33,
-            "campers_asignados": [
-                {
-                    "id": "99",
-                    "nombre": "Kevin",
-                    "ruta_entrenamiento": "NodeJS"
-                }
-            ]
+            "campers_asignados": []
         }
     }
 }

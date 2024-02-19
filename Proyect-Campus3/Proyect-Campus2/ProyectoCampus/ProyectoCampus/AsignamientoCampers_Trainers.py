@@ -132,4 +132,3 @@ def MenuAsignacion():
             print("Ha ocurrido un error")
             print("Probablemente ingresaste una variable que no es del tipo 'int'. Asegurate de digitar uno de los identificadores (1, 2, 3).")
 
-MenuAsignacion()
