@@ -1,9 +1,3 @@
 {
-    "Resultados": [
-        {
-            "Nombre": "Kevin",
-            "Nota": 100.0,
-            "estado": "Aprovado"
-        }
-    ]
+    "Resultados": []
 }

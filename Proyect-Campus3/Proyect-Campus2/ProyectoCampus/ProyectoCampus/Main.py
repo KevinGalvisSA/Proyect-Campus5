@@ -2,7 +2,7 @@ import Main
 import Trainers
 import Campers
 import Coordinacion
-
+import Reportes
 
 def MenuOpciones(Opciones):
     #Calcular longitud maxima de las opciones
@@ -39,7 +39,9 @@ def TerminarMenuPrincipal():
     print("")
     print("Saliendo...")
     #Añadir funcion time
-    exit()
+    print("Hecho. Ingresando al menu reportes y finalizacion del sistema.")
+    #Añadir funcion time
+    Reportes.menuReportes()
 
 def MenuPrincipal():
     global opc

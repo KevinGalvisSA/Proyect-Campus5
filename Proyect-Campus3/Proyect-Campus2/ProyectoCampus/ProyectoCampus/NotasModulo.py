@@ -25,6 +25,10 @@ def evaluar_modulo(documento, pruebaTeoria, pruebaPractica, quizes, trabajos):
 
     # Determinar si el camper aprobó el módulo
     aprobado = notaDefinitiva >= 60
+    if aprobado == True :
+        riesgo = False
+    else:
+        riesgo = True
 
     # Crear un diccionario con los resultados
 
@@ -35,7 +39,8 @@ def evaluar_modulo(documento, pruebaTeoria, pruebaPractica, quizes, trabajos):
         "quizes": quizes,
         "trabajos": trabajos,
         "notaFinal": notaDefinitiva,
-        "aprobado": aprobado
+        "aprobado": aprobado,
+        "riesgo": riesgo
     }
 
     return resultados

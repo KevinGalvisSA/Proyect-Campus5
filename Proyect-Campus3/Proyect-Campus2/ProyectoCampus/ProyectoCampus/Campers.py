@@ -13,7 +13,7 @@ def registrarCamper():
     TelFijo = input("Ingrese el número fijo del camper: ")
     estado = "Inscrito"
     
-    Campers[documento] = {'nombre': nombre, 'edad': edad, 'telefono movil': TelMov, 'telefono fijo': TelFijo, 'estado': estado, 'riesgo': False}
+    Campers[documento] = {'nombre': nombre, 'edad': edad, 'telefono movil': TelMov, 'telefono fijo': TelFijo, 'estado': estado}
     
     with open("Campers.json", "w") as MuestraCampers:
         json.dump(Campers, MuestraCampers, indent=4)
