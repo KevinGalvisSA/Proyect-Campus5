@@ -3,6 +3,7 @@ import Trainers
 import Campers
 import Coordinacion
 import Reportes
+import time
 
 def MenuOpciones(Opciones):
     #Calcular longitud maxima de las opciones
@@ -38,9 +39,9 @@ def TerminarMenuPrincipal():
     print("Has decidido salir del menu 'Principal'")
     print("")
     print("Saliendo...")
-    #Añadir funcion time
+    time.sleep(3)
     print("Hecho. Ingresando al menu reportes y finalizacion del sistema.")
-    #Añadir funcion time
+    time.sleep(3)
     Reportes.menuReportes()
 
 def MenuPrincipal():
@@ -60,19 +61,19 @@ def MenuPrincipal2():
     while (True):
         try:
             if opc  == 1:
-                
+                time.sleep(1)
                 Campers.MenuCamper()
                 
             elif opc  == 2:
-                
+                time.sleep(1)
                 Trainers.MenuTrainer()
                 
             elif opc  == 3:
-                
+                time.sleep(1)
                 Coordinacion.MenuCoordinacion()
                 
             elif opc  == 4:
-                
+                time.sleep(1)
                 TerminarMenuPrincipal()
                 
             else:

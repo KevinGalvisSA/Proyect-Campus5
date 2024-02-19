@@ -1,5 +1,6 @@
 import json
 import RegresarMain
+import time
 
 Campers = {}
 
@@ -58,7 +59,7 @@ def TerminarMenuCamper():
     print("Has decidido salir del menu 'Gestion de Campers'.")
     print("")
     print("Volviendo al menu principal...")
-    #Añadir funcion time
+    time.sleep(3)
     RegresarMain.RegresarAlMain()
 
 
@@ -74,15 +75,15 @@ def MenuCamper():
             print("")
             
             if Option == 1:
-                
+                time.sleep(1)
                 registrarCamper()
-                
+                time.sleep(1)
             elif Option == 2:
-                
+                time.sleep(1)
                 MostrarCampers()
-                
+                time.sleep(1)
             elif Option == 3:
-                
+                time.sleep(1)
                 TerminarMenuCamper()
                 
             else:

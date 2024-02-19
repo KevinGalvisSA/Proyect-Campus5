@@ -5,6 +5,7 @@ import CrearRutas
 import AsignamientoCampers_Trainers
 import NotasModulo
 import Horarios
+import time
 
 def MuestraMenu(Opciones):
     #Calcular longitud maxima de las opciones
@@ -46,7 +47,7 @@ def TerminarMenuCoordinacion():
     print("Has decidido salir del menu 'Gestion de Campers'.")
     print("")
     print("Volviendo al menu principal...")
-    #Añadir funcion time
+    time.sleep(3)
     RegresarMain.RegresarAlMain()
 
 
@@ -91,31 +92,31 @@ def MenuCoordinacion():
             print("")
             
             if Opc == 1:
-                
+                time.sleep(1)
                 ExamenIngreso.NotasExamenIngreso()
                 
             elif Opc == 2:
-                
+                time.sleep(1)
                 NotasModulo.AñadirNotasModulo()
                 
             elif Opc == 3:
-                
+                time.sleep(1)
                 Eliminar_Campers_Trainers.Eliminacion_Campers_Trainers()
-
-            elif Opc == 4:
                 
+            elif Opc == 4:
+                time.sleep(1)
                 CrearRutas.CrearRutasNuevas()
                 
             elif Opc == 5:
-                
+                time.sleep(1)
                 Horarios.añadirHorarios()
                 
             elif Opc == 6:
-                
+                time.sleep(1)
                 AsignamientoCampers_Trainers.MenuAsignacion()
                 
             elif Opc == 7:
-                
+                time.sleep(1)
                 TerminarMenuCoordinacion()
                 
             else:
@@ -138,31 +139,31 @@ def MenuCoordinacion2():
             print("")
             
             if Opc == 1:
-                
+                time.sleep(1)
                 ExamenIngreso.NotasExamenIngreso()
                 
             elif Opc == 2:
-                
+                time.sleep(1)
                 NotasModulo.AñadirNotasModulo()
                 
             elif Opc == 3:
-                
+                time.sleep(1)
                 Eliminar_Campers_Trainers.Eliminacion_Campers_Trainers()
                 
             elif Opc == 4:
-                
+                time.sleep(1)
                 CrearRutas.CrearRutasNuevas()
                 
             elif Opc == 5:
-                
+                time.sleep(1)
                 Horarios.añadirHorarios()
                 
             elif Opc == 6:
-                
+                time.sleep(1)
                 AsignamientoCampers_Trainers.MenuAsignacion()
                 
             elif Opc == 7:
-                
+                time.sleep(1)
                 TerminarMenuCoordinacion()
                 
             else:
