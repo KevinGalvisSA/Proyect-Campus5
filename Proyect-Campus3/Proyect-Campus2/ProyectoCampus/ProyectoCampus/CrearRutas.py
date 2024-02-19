@@ -1,4 +1,5 @@
 import json
+import RegresarCoordinacion
 
 def CrearRutasNuevas():
     # Leer el archivo JSON y cargar los datos en un diccionario
@@ -27,6 +28,7 @@ def CrearRutasNuevas():
             with open("RutasNuevas.json", "w") as f:
                 json.dump(datos, f, indent=4)
             print("Archivo JSON modificado exitosamente.")
+    RegresarCoordinacion.regresarMenuC()
 
 
 

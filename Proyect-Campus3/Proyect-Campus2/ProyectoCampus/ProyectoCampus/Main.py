@@ -80,5 +80,5 @@ def MenuPrincipal2():
             print("")
             print("Asegurate de ingresar la opcion correcta tomando en cuenta el identificador ('1', '2', '3' o '4').")
 
-MenuPrincipal()
+
 

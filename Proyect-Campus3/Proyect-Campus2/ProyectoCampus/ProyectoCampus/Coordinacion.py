@@ -2,6 +2,8 @@ import ExamenIngreso
 import Eliminar_Campers_Trainers
 import RegresarMain
 import CrearRutas
+import AsignamientoCampers_Trainers
+import NotasModulo
 
 def MuestraMenu(Opciones):
     #Calcular longitud maxima de las opciones
@@ -23,7 +25,7 @@ OpcionEscogida = ["           *Bienvenido al menu de Coordinacion*",
     "═════════════════════════════════════════════════════════",
     "A continuacion, se le presentan las siguientes opciones:",
     "",
-    "1. Actualizar nota de ingreso del camper",
+    "1. Actualizar nota de ingreso de los campers",
     "",
     "2. Actualizar notas de los filtros",
     "",
@@ -93,31 +95,28 @@ def MenuCoordinacion():
                 
             elif Opc == 2:
                 
-                "AñadirNotaFiltros()"
+                NotasModulo.AñadirNotasModulo()
                 
             elif Opc == 3:
                 
-                "Modificar_Estado_RiesgoCamper()"
-                
-            elif Opc == 4:
-                
                 Eliminar_Campers_Trainers.Eliminacion_Campers_Trainers()
-                
-            elif Opc == 5:
+
+            elif Opc == 4:
                 
                 CrearRutas.CrearRutasNuevas()
                 
-            elif Opc == 6:
+            elif Opc == 5:
                 
                 "AñadirHorarios()"
                 
+            elif Opc == 6:
+                
+                AsignamientoCampers_Trainers.MenuAsignacion()
+                
             elif Opc == 7:
                 
-                "AsignarCampers_Trainers()"
-                
-            elif Opc == 8:
-                
                 TerminarMenuCoordinacion()
+                
             else:
                 print("No has ingresado uno de los identirficadores disponibles")
         except ValueError as e:
@@ -143,7 +142,7 @@ def MenuCoordinacion2():
                 
             elif Opc == 2:
                 
-                "AñadirNotaFiltros()"
+                NotasModulo.AñadirNotasModulo()
                 
             elif Opc == 3:
                 
@@ -159,7 +158,7 @@ def MenuCoordinacion2():
                 
             elif Opc == 6:
                 
-                "AsignarCampers_Trainers()"
+                AsignamientoCampers_Trainers.MenuAsignacion()
                 
             elif Opc == 7:
                 

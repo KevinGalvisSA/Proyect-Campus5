@@ -1,4 +1,5 @@
 import json
+import RegresarCoordinacion
 
 def EliminarCamper():
     with open("Campers.json", "r") as archivo:
@@ -11,12 +12,12 @@ def EliminarCamper():
             del datosCampers[documento]
             #Añadir funcion time
             print("Camper eliminado con exito")
+            break
         else:
             print("No has ingresado el documento correcto")
     with open('Campers.json', 'w') as file:
         json.dump(datosCampers, file, indent=4)
-    exit()
-
+    RegresarCoordinacion.regresarMenuC()
 
 def EliminarTrainer():
     with open("Trainers.json", "r") as archivo:
@@ -33,7 +34,7 @@ def EliminarTrainer():
         print("No has ingresado el documento correcto")
     with open('Trainers.json', 'w') as file:
         json.dump(datosTrainers, file, indent=4)
-    exit()
+    RegresarCoordinacion.regresarMenuC()
 
 def Eliminacion_Campers_Trainers():
     while True:

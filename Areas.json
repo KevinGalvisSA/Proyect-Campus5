@@ -1,0 +1,27 @@
+{
+    "rutas": [
+        "NodeJS",
+        "Java",
+        "NetCore"
+    ],
+    "areas_entrenamiento": {
+        "sputnik": {
+            "capacidad_maxima": 33,
+            "campers_asignados": []
+        },
+        "artemis": {
+            "capacidad_maxima": 33,
+            "campers_asignados": []
+        },
+        "apolo": {
+            "capacidad_maxima": 33,
+            "campers_asignados": [
+                {
+                    "id": "99",
+                    "nombre": "Kevin",
+                    "ruta_entrenamiento": "NodeJS"
+                }
+            ]
+        }
+    }
+}

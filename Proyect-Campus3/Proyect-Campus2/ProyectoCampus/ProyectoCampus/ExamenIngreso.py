@@ -1,5 +1,5 @@
 import json
-import Coordinacion
+import RegresarCoordinacion
 
 def NotasExamenIngreso():
     with open("Campers.json", "r") as Archivo:
@@ -29,6 +29,22 @@ def NotasExamenIngreso():
                         diccionario_interno["estado"]="Reprovado"
                         NuevoEstado = diccionario_interno["estado"]
                         print(f"El nuevo estado del camper es: {NuevoEstado}.")
+                        NotaIngreso = NotaPromedio
+                        Resultados = {
+                            "Nombre": nombre,
+                            "Nota": NotaIngreso
+                        }
+                        # Agregar el resultado la lista de resultados en el archivo JSON
+                        data["Resultados"].append(Resultados)
+                        # Guardar los datos actualizados en el archivo JSON
+                        with open('ExamenIngreso.json', 'w') as archivo:
+                            json.dump(data, archivo, indent=4)
+                        with open('ExamenIngreso.json', 'r') as archivo:
+                            LeerNotas = json.load(archivo)
+                            print(LeerNotas)
+                            break
+                    else:
+                        print("El estado del camper no es el correcto")
                 elif NotaPromedio >= 60 :
                     print("|-EXAMEN APROVADO-|")
                     print("El camper califica para ingresar a ||-CAMPUSLAND-||")
@@ -43,19 +59,20 @@ def NotasExamenIngreso():
                         }
                         # Agregar el resultado la lista de resultados en el archivo JSON
                         data["Resultados"].append(Resultados)
+                    else:
+                        print("El estado del camper no es el correcto")
                     # Guardar los datos actualizados en el archivo JSON
                     with open('ExamenIngreso.json', 'w') as archivo:
-                        json.dump(data, NuevoEstado, archivo, indent=4)
+                        json.dump(data, archivo, indent=4)
                     with open('ExamenIngreso.json', 'r') as archivo:
                         LeerNotas = json.load(archivo)
                         print(LeerNotas)
-                        Coordinacion.MenuCoordinacion2()
+                        break
             else:
                 print(f"El camper que has igresado {nombre}. NO se encuentra registrado")
-                Coordinacion.MenuCoordinacion2()
         else:
             print("El documento que ingresaste NO esta registrado")
-            Coordinacion.MenuCoordinacion2()
+    RegresarCoordinacion.regresarMenuC()
 
 
 

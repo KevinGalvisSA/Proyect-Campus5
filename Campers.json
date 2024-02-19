@@ -1,0 +1,18 @@
+{
+    "99": {
+        "nombre": "Kevin",
+        "edad": "17",
+        "telefono movil": "1",
+        "telefono fijo": "2",
+        "estado": "Inscrito",
+        "riesgo": false
+    },
+    "22": {
+        "nombre": "Jose",
+        "edad": "23",
+        "telefono movil": "3",
+        "telefono fijo": "4",
+        "estado": "Inscrito",
+        "riesgo": false
+    }
+}

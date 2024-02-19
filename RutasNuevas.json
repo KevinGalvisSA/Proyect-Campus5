@@ -2,21 +2,15 @@
     "rutas_de_entrenamiento": [
         {
             "nombre": "Fundamentos de programacion",
-            "cursos": [
-                "Python"
-            ]
+            "cursos": []
         },
         {
             "nombre": "Programacion Web",
-            "cursos": [
-                "HTML"
-            ]
+            "cursos": []
         },
         {
             "nombre": "Programacion formal",
-            "cursos": [
-                "Java"
-            ]
+            "cursos": []
         },
         {
             "nombre": "Bases de datos",
@@ -30,10 +24,7 @@
         },
         {
             "nombre": "Backend",
-            "cursos": [
-                "NetCore",
-                "NodeJS"
-            ]
+            "cursos": []
         }
     ]
 }]
