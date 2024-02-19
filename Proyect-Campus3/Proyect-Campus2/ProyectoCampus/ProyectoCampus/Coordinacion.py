@@ -4,6 +4,7 @@ import RegresarMain
 import CrearRutas
 import AsignamientoCampers_Trainers
 import NotasModulo
+import Horarios
 
 def MuestraMenu(Opciones):
     #Calcular longitud maxima de las opciones
@@ -107,7 +108,7 @@ def MenuCoordinacion():
                 
             elif Opc == 5:
                 
-                "AñadirHorarios()"
+                Horarios.añadirHorarios()
                 
             elif Opc == 6:
                 
@@ -154,7 +155,7 @@ def MenuCoordinacion2():
                 
             elif Opc == 5:
                 
-                "AñadirHorarios()"
+                Horarios.añadirHorarios()
                 
             elif Opc == 6:
                 

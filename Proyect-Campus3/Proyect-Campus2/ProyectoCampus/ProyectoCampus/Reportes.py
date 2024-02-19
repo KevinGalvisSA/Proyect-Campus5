@@ -28,7 +28,7 @@ def menuReportes():
             pass
         elif opcion == "2":
             
-            with open('ExamenIngreso.json', 'r') as archivo:
+            with open('CampersAprovados.json', 'r') as archivo:
                 LeerNotas = json.load(archivo)
                 print("Registros de los campers aprovados")
                 print(LeerNotas)
@@ -41,13 +41,13 @@ def menuReportes():
                 print(TrainersTrabajando)
             pass
         elif opcion == "4":
-            with open('NotasExamenModulo', 'r') as archivo:
+            with open('NotasExamenModulo.json', 'r') as archivo:
                 RiesgoCamper = json.load(archivo)
                 print(RiesgoCamper)
             pass
         elif opcion == "5":
             
-            with open('Areas.json', 'w') as archivo:
+            with open('Areas.json', 'r') as archivo:
                 Campers_Trainers = json.load(archivo)
                 print(Campers_Trainers)
             pass

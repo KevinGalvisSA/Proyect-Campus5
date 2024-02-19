@@ -11,7 +11,7 @@ def crearHorariosTrainers(trainers):
     for documento, trainerData in trainers.items():
         rutas = trainerData.get("rutas", [])
         horariosTrainer[documento] = {}
-        horarioElegido = input(f"Ingrese el horario para el Trainer {documento} (1 para 6:00 - 14:00, 2 para 14:00 - 22:00): ")
+        horarioElegido = input("Ingrese el horario para el Trainer. (1 para 6:00 - 14:00, 2 para 14:00 - 22:00): ")
         if horarioElegido == "1":
             horariosTrainer[documento]["6:00 - 14:00"] = {ruta: False for ruta in rutas}
             horariosTrainer[documento]["14:00 - 22:00"] = {}
@@ -35,7 +35,7 @@ def añadirHorarios():
     # Crear los horarios de los Trainers
     horariosTrainer = crearHorariosTrainers(trainers)
 
-    # Solicitar al usuario que ingrese el ID del Trainer y la ruta que desea verificar
+    # Solicitar al usuario que ingrese el documento del Trainer y la ruta que desea verificar
     documento = input("Ingrese el documento del Trainer: ")
     ruta = input("Ingrese la ruta que desea verificar: ")
 
@@ -61,4 +61,9 @@ def añadirHorarios():
     # Guardar los horarios de los Trainers en un archivo JSON
     with open("horariosTrainers.json", "w") as archivo:
         json.dump(horariosTrainer, archivo, indent=4)
+
+    with open("horariosTrainers.json", "r") as archivo:
+        LeerHorario = json.load(archivo)
+        print(LeerHorario)
     RegresarCoordinacion.regresarMenuC()
+
